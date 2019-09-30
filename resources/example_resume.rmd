@@ -1,15 +1,18 @@
-Prayansh Srivastava
+John Doe
 ===
 # Work Experience
 ## Company 1
 ### Role 1
-* Did some stuff
+* Did some {{stuff}} other than this
 
 # Education
 ## Bachelors of Computer Science
 ### University of British Columbia (Sept 2015-May 2020)
 * {{Honour list}}
 * CPSC 310, 410, ....
+
+### High School (Sept 2015-May 2020)
+* Failed it
 
 # Volunteer
 ## NASA

@@ -1,0 +1,138 @@
+{
+  "header": {
+    "title": {
+      "text": {
+        "value": "John Doe",
+        "decorators": []
+      }
+    }
+  },
+  "body": [
+    {
+      "title": {
+        "text": {
+          "value": "Education",
+          "decorators": []
+        }
+      },
+      "sub_sections": [
+        {
+          "sub_title": {
+            "text": {
+              "value": "Bachelors of Computer Science",
+              "decorators": []
+            }
+          },
+          "sub_sub_title": {
+            "text": {
+              "value": "University of British Columbia (Sept 2015-May 2020)",
+              "decorators": []
+            }
+          },
+          "bullets": [
+            {
+              "text": {
+                "value": "Honour List",
+                "decorators": [
+                  "EMPHASIS"
+                ]
+              }
+            },
+            {
+              "text": {
+                "value": "CPSC 310, 410, ....",
+                "decorators": []
+              }
+            }
+          ]
+        },
+        {
+          "sub_sub_title": {
+            "text": {
+              "value": "High School (Sept 2015-May 2020)",
+              "decorators": []
+            }
+          },
+          "bullets": [
+            {
+              "text": {
+                "value": "Failed it",
+                "decorators": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": {
+          "value": "Work Experience",
+          "decorators": []
+        }
+      },
+      "sub_sections": {
+        "sub_title": {
+          "text": {
+            "value": "Company 1",
+            "decorators": []
+          }
+        },
+        "sub_sub_title": {
+          "text": {
+            "value": "Role 1",
+            "decorators": []
+          }
+        },
+        "bullets": [
+          {
+            "text": {
+              "value": "Did some ",
+              "decorators": [],
+              "text": {
+                "value": "stuff",
+                "decorators": "EMPHASIS",
+                "text": {
+                  "value": "other than this",
+                  "decorators": []
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": {
+          "value": "Volunteer",
+          "decorators": []
+        }
+      },
+      "sub_sections": [
+        {
+          "sub_title": {
+            "text": {
+              "value": "NASA",
+              "decorators": []
+            }
+          },
+          "sub_sub_title": {
+            "text": {
+              "value": "Role 1",
+              "decorators": []
+            }
+          },
+          "bullets": [
+            {
+              "text": {
+                "value": "Space Program",
+                "decorators": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
