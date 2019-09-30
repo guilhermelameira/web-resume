@@ -1,6 +1,8 @@
 // Tokenizer is a read-only stack-like structure that has basic operations like
 // getNext(), peek(), hasNext()
 // Best practice to call peek() and then getNext()
+import Tokens from "./Tokens";
+
 export default class Tokenizer {
     private program: string
     private tokens: string[]
@@ -11,7 +13,7 @@ export default class Tokenizer {
         this.program = programString
         this.tokens = []
         this.currentIdx = 0
-        this.lineNumber = 0
+        this.lineNumber = 1
         this.tokenize()
     }
 
@@ -28,19 +30,17 @@ export default class Tokenizer {
         if (this.peek() != null) {
             let token = this.tokens[this.currentIdx]
             this.currentIdx++
-            return token;
-        }
-        return null
-    }
-
-    // peek returns the next token, advancing tokens only for blank lines
-    public peek(): string | null {
-        if (this.currentIdx < this.tokens.length) {
-            // ignore blank lines
-            while ("NEW_LINE" === this.tokens[this.currentIdx]) {
-                this.currentIdx++
+            if (token === Tokens.NEW_LINE) {
                 this.lineNumber++
             }
+            return token;
+        }
+        return null // TODO throw error instead
+    }
+
+    // peek returns the next token
+    public peek(): string | null {
+        if (this.currentIdx < this.tokens.length) {
             return this.tokens[this.currentIdx]
         }
         return null
