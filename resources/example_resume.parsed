@@ -1,64 +1,92 @@
 {
   "header": {
-    "title": {
-      "text": {
-        "value": "John Doe",
-        "decorators": []
+    "name": {
+      "value": "John Doe"
+    },
+    "links": [
+      {
+        "value": "lin1"
+      },
+      {
+        "value": "lin2"
+      },
+      {
+        "value": "lin2"
       }
-    }
+    ]
   },
   "body": [
     {
       "title": {
-        "text": {
-          "value": "Education",
-          "decorators": []
-        }
+        "value": "Education"
       },
-      "sub_sections": [
+      "entries": [
         {
-          "sub_title": {
-            "text": {
-              "value": "Bachelors of Computer Science",
-              "decorators": []
-            }
+          "title": {
+            "value": "Bachelors of Computer Science"
           },
-          "sub_sub_title": {
-            "text": {
-              "value": "University of British Columbia (Sept 2015-May 2020)",
-              "decorators": []
-            }
+          "subtitle": {
+            "value": "University of British Columbia (Sept 2015-May 2020)"
           },
-          "bullets": [
+          "summary": [
             {
-              "text": {
-                "value": "Honour List",
-                "decorators": [
-                  "EMPHASIS"
-                ]
-              }
+              "value": [
+                {
+                  "value": "Techonologies used : *React*, *Flask*",
+                  "decorator": "RAW"
+                },
+                {
+                  "value": "React",
+                  "decorator": "TOKEN"
+                },
+                {
+                  "value": ", ",
+                  "decorator": "RAW"
+                },
+                {
+                  "value": "Flask",
+                  "decorator": "TOKEN"
+                }
+              ],
+              "is_bullet": false
             },
             {
-              "text": {
-                "value": "CPSC 310, 410, ....",
-                "decorators": []
-              }
+              "value": [
+                {
+                  "value": "CPSC 310, 410, ",
+                  "decorator": "RAW"
+                },
+                {
+                  "value": "random",
+                  "decorator": "EMPHASIS"
+                }
+              ],
+              "is_bullet": true
             }
           ]
         },
         {
-          "sub_sub_title": {
-            "text": {
-              "value": "High School (Sept 2015-May 2020)",
-              "decorators": []
-            }
+          "title": {
+            "value": "High School (Sept 2015-May 2020)"
           },
-          "bullets": [
+          "summary": [
             {
-              "text": {
-                "value": "Failed it",
-                "decorators": []
-              }
+              "value": [
+                {
+                  "value": "Failed it",
+                  "decorator": "RAW"
+                }
+              ],
+              "is_bullet": true
+            },
+            {
+              "value": [
+                {
+                  "value": "Not finishing",
+                  "decorator": "RAW"
+                }
+              ],
+              "is_bullet": false
             }
           ]
         }
@@ -66,69 +94,53 @@
     },
     {
       "title": {
-        "text": {
-          "value": "Work Experience",
-          "decorators": []
-        }
+        "value": "Work Experience"
       },
-      "sub_sections": {
-        "sub_title": {
-          "text": {
-            "value": "Company 1",
-            "decorators": []
-          }
-        },
-        "sub_sub_title": {
-          "text": {
-            "value": "Role 1",
-            "decorators": []
-          }
-        },
-        "bullets": [
-          {
-            "text": {
-              "value": "Did some ",
-              "decorators": [],
-              "text": {
-                "value": "stuff",
-                "decorators": "EMPHASIS",
-                "text": {
+      "entries": [
+        {
+          "title": {
+            "value": "Company 1"
+          },
+          "subtitle": {
+            "value": "Role 1"
+          },
+          "summary": [
+            {
+              "value": [
+                {
+                  "value": "Did some ",
+                  "decorator": "RAW"
+                },
+                {
+                  "value": "stuff ",
+                  "decorator": "EMPHASIS"
+                },
+                {
                   "value": "other than this",
-                  "decorators": []
+                  "decorator": "RAW"
                 }
-              }
+              ]
             }
-          }
-        ]
-      }
+          ]
+        }
+      ]
     },
     {
       "title": {
-        "text": {
-          "value": "Volunteer",
-          "decorators": []
-        }
+        "value": "Volunteer"
       },
-      "sub_sections": [
+      "entries": [
         {
-          "sub_title": {
-            "text": {
-              "value": "NASA",
-              "decorators": []
-            }
+          "title": {
+            "value": "NASA"
           },
-          "sub_sub_title": {
-            "text": {
-              "value": "Role 1",
-              "decorators": []
-            }
-          },
-          "bullets": [
+          "sumary": [
             {
-              "text": {
+              "value": {
                 "value": "Space Program",
-                "decorators": []
-              }
+                "decorator": "RAW"
+              },
+              "bullet_point": true
             }
           ]
         }

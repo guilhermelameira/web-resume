@@ -1,19 +1,30 @@
-John Doe
+@John Doe
+lin1
+lin2
+lin3
 ===
-# Work Experience
-## Company 1
-### Role 1
-* Did some {{stuff}} other than this
-
 # Education
 ## Bachelors of Computer Science
 ### University of British Columbia (Sept 2015-May 2020)
-* {{Honour list}}
-* CPSC 310, 410, ....
+Techonologies used : ((React)), ((Flask))
+- CPSC 310, 410, *random*
+Tech
 
-### High School (Sept 2015-May 2020)
-* Failed it
+## High School (Sept 2015-May 2020)
+- Failed it
+Not finishing
 
-# Volunteer
-## NASA
-* Space Program
+# Work Experience
+## Company 1
+### Role 1
+- Did some *stuff* other than this
+
+$volunteer
+
+DATA:
+
+var volunteer {
+    # Volunteer
+    ## NASA
+    - Space Program
+}
