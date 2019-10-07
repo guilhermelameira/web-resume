@@ -23,7 +23,7 @@ export default class Tokenizer {
         // TODO maybe do more formatting for easier tokenizing
         enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
         this.tokens = enhanced.match(/\S+/g) as string[]
-        console.log('TOKENS:', this.tokens)
+        console.log('TOKENS:', this.tokens) // fixme remove
     }
 
     // getNext returns the next token of the program, and advances the token list
