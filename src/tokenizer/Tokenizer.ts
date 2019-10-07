@@ -18,6 +18,7 @@ export default class Tokenizer {
     }
 
     private tokenize(): void {
+        this.program = this.program.charAt(0) + " " + this.program.substring(1) // Add a space between @ and name for header
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
         // TODO maybe do more formatting for easier tokenizing
         enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
@@ -26,7 +27,7 @@ export default class Tokenizer {
     }
 
     // getNext returns the next token of the program, and advances the token list
-    public getNext(): string | null {
+    public getNext(): string {
         if (this.peek() != null) {
             let token = this.tokens[this.currentIdx]
             this.currentIdx++
@@ -35,7 +36,7 @@ export default class Tokenizer {
             }
             return token;
         }
-        return null // TODO throw error instead
+        throw new Error("No more tokens to consume")
     }
 
     // peek returns the next token
