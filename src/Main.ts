@@ -12,9 +12,16 @@ export default class Main {
             console.log("Failed to open file")
             return
         }
+        let test = new Tokenizer(program)
         let t = new Tokenizer(program)
         let p = new ProgramParser();
-        p.parse(t)
-        console.log("done")
+        let str = ""
+        while (test.hasNext()) {
+            str += (`${test.getNext()}, `)
+        }
+        console.log(str)
+        console.log("done showing tokens")
+        let programParsed = p.parse(t);
+        console.log(JSON.stringify(programParsed, null, 2))
     }
 }
