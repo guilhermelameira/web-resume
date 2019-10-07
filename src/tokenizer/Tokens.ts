@@ -5,5 +5,8 @@ export default class Tokens {
     public static EMPHASIS_DECORATOR_END = "}}"
     public static NEW_LINE = "NEW_LINE"
     public static USER_NAME = "@"
+    public static SECTION_TITLE_KEY = "#"
+    public static ENTRY_TITLE_KEY = "##"
+    public static ENTRY_SUBTITLE_KEY = "###"
 }
 
