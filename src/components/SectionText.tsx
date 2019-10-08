@@ -9,11 +9,11 @@ const SectionText: React.FC<{
     is_bullet
   }
 }) => (
-  <div className="section-text">
+  <div className="entry-point">
     {is_bullet && (
       <div className="bullet"></div>
     )}
-    <div>
+    <div className="content">
       {value.map((text, index) => (
         <span
           key={index}

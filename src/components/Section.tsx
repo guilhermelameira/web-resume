@@ -11,10 +11,12 @@ const Section: React.FC<{
   }
 }) => (
   <div className="section">
-    <div>{title.value}</div>
-    {entries.map((entry, index) => (
-      <Entry key={index} ast={entry} />
-    ))}
+    <div className="section-title">{title.value}</div>
+    <div className="section-entries">
+      {entries.map((entry, index) => (
+        <Entry key={index} ast={entry} />
+      ))}
+    </div>
   </div>
 );
 

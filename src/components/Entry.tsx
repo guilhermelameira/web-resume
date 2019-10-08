@@ -12,9 +12,9 @@ const Entry: React.FC<{
   }
 }) => (
   <div className="entry">
-    <div>{title.value}</div>
+    <div className="entry-title">{title.value}</div>
     {subtitle && (
-      <div>{subtitle.value}</div>
+      <div className="entry-subtitle">{subtitle.value}</div>
     )}
     {summary.map((s, index) => (
       <SectionText key={index} ast={s} />
