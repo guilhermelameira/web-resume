@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AppInput: React.FunctionComponent<{
+const AppInput: React.FC<{
   inputValue: string;
   handleInputValueChange(value: string): void;
-}> = (props) => (
+}> = props => (
   <div id="input">
     <textarea
       value={props.inputValue}
