@@ -11,5 +11,16 @@ export default class Tokens {
     public static TOKEN_DECORATOR_START = "(("
     public static TOKEN_DECORATOR_END = "))"
     public static BULLET_KEY = "-"
+    public static literals = [
+        Tokens.HEADER_BODY_DIV,
+        Tokens.EMPHASIS_DECORATOR_END,
+        Tokens.EMPHASIS_DECORATOR_START,
+        Tokens.TOKEN_DECORATOR_END,
+        Tokens.TOKEN_DECORATOR_START,
+        Tokens.SECTION_TITLE_KEY,
+        Tokens.ENTRY_SUBTITLE_KEY,
+        Tokens.ENTRY_TITLE_KEY,
+        Tokens.BULLET_KEY,
+    ]
 }
 
