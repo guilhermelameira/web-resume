@@ -16,11 +16,11 @@ export class ProgramParser extends AbstractParser {
                 `at line: ${context.getCurrentLine()}`)
         }
 
-        // let body = new BodyParser()
-        // body.parse(context)
+        let bodyParser = new BodyParser()
+        let parsedBody = bodyParser.parse(context)
         return {
             header: header,
-            body: {} as Body //TODO
+            body: parsedBody
         }
     }
 }
