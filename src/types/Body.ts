@@ -1,3 +1,3 @@
 import {Section} from "./Section";
 
-export type Body = Array<Section>
+export type Body = Section[]
