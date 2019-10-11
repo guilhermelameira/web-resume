@@ -7,11 +7,11 @@ const Body: React.FC<{
 }> = ({
   ast
 }) => (
-  <div id="body">
+  <main className="body">
     {ast.map((section, index) => (
       <Section key={index} ast={section} />
     ))}
-  </div>
+  </main>
 );
 
 export default Body;

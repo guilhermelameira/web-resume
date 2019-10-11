@@ -12,8 +12,12 @@ class AppOutput extends Component {
   render = () => {
     return (
       <div id="output">
-        <Header ast={parsed.header} />
-        <Body ast={parsed.body} />
+        <div className="canvas">
+          <div className="resume letter">
+            <Header ast={parsed.header} />
+            <Body ast={parsed.body} />
+          </div>
+        </div>
       </div>
     );
   };
@@ -40,22 +44,35 @@ const parsed = {
   },
   "body": [
     {
-      "title": {
-        "value": "Education"
-      },
+      "title": [
+        {
+          "value": "Education",
+          "decorator": "TOKEN"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "Bachelors of Computer Science"
-          },
-          "subtitle": {
-            "value": "University of British Columbia (Sept 2015-May 2020)"
-          },
+          "title": [
+            {
+              "value": "Bachelors of ",
+              "decorator": "RAW"
+            },
+            {
+              "value": "Computer Science",
+              "decorator": "EMPHASIS"
+            }
+          ],
+          "subtitle": [
+            {
+              "value": "University of British Columbia (Sept 2015-May 2020)",
+              "decorator": "RAW"
+            }
+          ],
           "summary": [
             {
               "value": [
                 {
-                  "value": "Techonologies used : *React*, *Flask*",
+                  "value": "Techonologies used : ",
                   "decorator": "RAW"
                 },
                 {
@@ -89,9 +106,12 @@ const parsed = {
           ]
         },
         {
-          "title": {
-            "value": "High School (Sept 2015-May 2020)"
-          },
+          "title": [
+            {
+              "value": "High School (Sept 2015-May 2020)",
+              "decorator": "RAW"
+            }
+          ],
           "summary": [
             {
               "value": [
@@ -116,17 +136,30 @@ const parsed = {
       ]
     },
     {
-      "title": {
-        "value": "Work Experience"
-      },
+      "title": [
+        {
+          "value": "Work ",
+          "decorator": "RAW"
+        },
+        {
+          "value": "Experience",
+          "decorator": "EMPHASIS"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "Company 1"
-          },
-          "subtitle": {
-            "value": "Role 1"
-          },
+          "title": [
+            {
+              "value": "Company 1",
+              "decorator": "RAW"
+            }
+          ],
+          "subtitle": [
+            {
+              "value": "Role 1",
+              "decorator": "TOKEN"
+            }
+          ],
           "summary": [
             {
               "value": [
@@ -135,11 +168,11 @@ const parsed = {
                   "decorator": "RAW"
                 },
                 {
-                  "value": "stuff ",
+                  "value": "stuff",
                   "decorator": "EMPHASIS"
                 },
                 {
-                  "value": "other than this",
+                  "value": " other than this",
                   "decorator": "RAW"
                 }
               ],
@@ -150,14 +183,20 @@ const parsed = {
       ]
     },
     {
-      "title": {
-        "value": "Volunteer"
-      },
+      "title": [
+        {
+          "value": "Volunteer",
+          "decorator": "RAW"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "NASA"
-          },
+          "title": [
+            {
+              "value": "NASA",
+              "decorator": "RAW"
+            }
+          ],
           "summary": [
             {
               "value": [

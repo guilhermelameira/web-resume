@@ -1,5 +1,6 @@
 import React from 'react';
 import {SectionText as TypeSectionText} from '../types/Text';
+import RichText from './RichText';
 
 const SectionText: React.FC<{
   ast: TypeSectionText
@@ -9,21 +10,18 @@ const SectionText: React.FC<{
     is_bullet
   }
 }) => (
-  <div className="entry-point">
+  <React.Fragment>
     {is_bullet && (
-      <div className="bullet"></div>
+    <li className="bullet">
+      <RichText ast={value} />
+    </li>
     )}
-    <div className="content">
-      {value.map((text, index) => (
-        <span
-          key={index}
-          className={text.decorator}
-        >
-          {text.value}
-        </span>
-      ))}
-    </div>
-  </div>
+    {!is_bullet && (
+    <p>
+      <RichText ast={value} />
+    </p>
+    )}
+  </React.Fragment>
 );
 
 export default SectionText;

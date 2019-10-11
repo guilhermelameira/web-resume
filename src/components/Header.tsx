@@ -9,14 +9,14 @@ const Header: React.FC<{
     links
   }
 }) => (
-  <div id="header">
-    <div>{name.value}</div>
-    <div className="links">
+  <header className="header">
+    <h1 className="name">{name.value}</h1>
+    <p className="contact">
       {links.map((link, index) => (
-        <div key={index}>{link.value}</div>
+        <a key={index}>{link.value}</a>
       ))}
-    </div>
-  </div>
+    </p>
+  </header>
 );
 
 export default Header;
