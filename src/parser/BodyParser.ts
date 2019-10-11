@@ -7,6 +7,7 @@ import {Section} from "../types/Section";
 export default class BodyParser extends AbstractParser {
     parse(context: Tokenizer): Body {
         let body = [] as Array<Section>
+        // let body = [] as Section[]
         do {
             let section = new SectionParser();
             body.push(section.parse(context))
