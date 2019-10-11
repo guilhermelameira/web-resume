@@ -29,12 +29,13 @@ export default class PlaintextParser extends AbstractParser {
         let text = ""
         let peek = context.peek()
         while (peek !== null) {
-            if(peek in this.delimiterList) {
+            if(this.delimiterList.includes(peek)) {
                 break; // do not consume the next token because it will be used
             }
             text += context.getNext() + ' '
             peek = context.peek()
         }
+        
         return {
             value: text
         }

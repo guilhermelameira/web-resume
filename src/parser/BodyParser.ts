@@ -11,7 +11,7 @@ export default class BodyParser extends AbstractParser {
         do {
             let section = new SectionParser();
             body.push(section.parse(context))
-        } while (!context.hasNext())
+        } while (context.hasNext())
         return body
     }
 }

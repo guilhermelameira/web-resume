@@ -12,13 +12,13 @@ export default class SectionParser extends AbstractParser {
         let sectionTitle = {
             value: ""
         }
-        if (sectionTitleKey !== Tokens.SECTION_TITLE_KEY) {
+        if (sectionTitleKey === Tokens.SECTION_TITLE_KEY) {
             sectionTitle = new PlaintextParser(Tokens.NEW_LINE).parse(context);
             context.getNext() // consume NEW_LINE
         }
         // Parse Entries
         let entries = [] as Array<Entry>
-        while (context.peek() !== Tokens.SECTION_TITLE_KEY || !context.hasNext()) {
+        while (context.peek() !== Tokens.SECTION_TITLE_KEY && context.hasNext()) {
             let entry = new EntryParser().parse(context);
             entries.push(entry)
         }

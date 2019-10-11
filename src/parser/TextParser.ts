@@ -11,7 +11,6 @@ export class TextParser extends AbstractParser {
         let plainTextParser = {} as PlaintextParser
         let initialText = {} as PlainText
 
-
         // check next token and evaluate based on the type of the text
         let nextToken = context.peek()
         switch (nextToken) {
