@@ -1,12 +1,12 @@
-import {PlainText, SectionText} from "./Text";
+import {SectionText, SpecialText} from "./Text";
 
 export type Entry = {
-    title: PlainText
-    subtitle: PlainText
+    title: SpecialText
+    subtitle: SpecialText
     summary: Array<SectionText>
 }
 
 export type Section = {
-    title: PlainText
+    title: SpecialText
     entries: Array<Entry>
 }

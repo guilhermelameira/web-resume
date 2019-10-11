@@ -1,6 +1,6 @@
-import {PlainText} from "./Text";
+import {SpecialText} from "./Text";
 
 export type Header = {
-    name: PlainText
-    links: Array<PlainText>
+    name: SpecialText
+    links: Array<SpecialText>
 }

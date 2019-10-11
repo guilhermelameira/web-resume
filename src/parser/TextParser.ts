@@ -1,13 +1,13 @@
 import {AbstractParser} from "./AbstractParser";
 import Tokenizer from "../tokenizer/Tokenizer";
-import {Text} from "../types/Text";
+import {SpecialText, Text} from "../types/Text";
 import Tokens from "../tokenizer/Tokens";
 import PlaintextParser from "./PlaintextParser";
 
 export class TextParser extends AbstractParser {
-    parse(context: Tokenizer): Text {
+    parse(context: Tokenizer): SpecialText {
         
-        let text = {} as Text
+        let text = {} as SpecialText
 
         // check next token and evaluate based on the type of the text
         let nextToken = context.peek()

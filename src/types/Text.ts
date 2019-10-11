@@ -2,12 +2,14 @@ export type PlainText = {
     value: string;
 };
 
+export type SpecialText = Array<Text>
+
 export type Text = {
     value: string;
     decorator: 'RAW'|'EMPHASIS'|'TOKEN'
 };
 
 export type SectionText = {
-    value: Array<Text>
+    value: SpecialText
     is_bullet: boolean
 }
