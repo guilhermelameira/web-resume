@@ -2,12 +2,14 @@ export type PlainText = {
     value: string;
 };
 
+export type RichText = Array<Text>;
+
 export type Text = {
     value: string;
-    decorator: 'RAW'|'EMPHASIS'|'TOKEN'
+    decorator: string;
 };
 
 export type SectionText = {
-    value: Array<Text>
+    value: RichText
     is_bullet: boolean
 }

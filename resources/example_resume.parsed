@@ -17,22 +17,35 @@
   },
   "body": [
     {
-      "title": {
-        "value": "Education"
-      },
+      "title": [
+        {
+          "value": "Education",
+          "decorator": "TOKEN"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "Bachelors of Computer Science"
-          },
-          "subtitle": {
-            "value": "University of British Columbia (Sept 2015-May 2020)"
-          },
+          "title": [
+            {
+              "value": "Bachelors of ",
+              "decorator": "RAW"
+            },
+            {
+              "value": "Computer Science",
+              "decorator": "EMPHASIS"
+            }
+          ],
+          "subtitle": [
+            {
+              "value": "University of British Columbia (Sept 2015-May 2020)",
+              "decorator": "RAW"
+            }
+          ],
           "summary": [
             {
               "value": [
                 {
-                  "value": "Techonologies used : *React*, *Flask*",
+                  "value": "Techonologies used : ",
                   "decorator": "RAW"
                 },
                 {
@@ -66,9 +79,12 @@
           ]
         },
         {
-          "title": {
-            "value": "High School (Sept 2015-May 2020)"
-          },
+          "title": [
+            {
+              "value": "High School (Sept 2015-May 2020)",
+              "decorator": "RAW"
+            }
+          ],
           "summary": [
             {
               "value": [
@@ -93,17 +109,30 @@
       ]
     },
     {
-      "title": {
-        "value": "Work Experience"
-      },
+      "title": [
+        {
+          "value": "Work ",
+          "decorator": "RAW"
+        },
+        {
+          "value": "Experience",
+          "decorator": "EMPHASIS"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "Company 1"
-          },
-          "subtitle": {
-            "value": "Role 1"
-          },
+          "title": [
+            {
+              "value": "Company 1",
+              "decorator": "RAW"
+            }
+          ],
+          "subtitle": [
+            {
+              "value": "Role 1",
+              "decorator": "TOKEN"
+            }
+          ],
           "summary": [
             {
               "value": [
@@ -112,35 +141,44 @@
                   "decorator": "RAW"
                 },
                 {
-                  "value": "stuff ",
+                  "value": "stuff",
                   "decorator": "EMPHASIS"
                 },
                 {
-                  "value": "other than this",
+                  "value": " other than this",
                   "decorator": "RAW"
                 }
-              ]
+              ],
+              "is_bullet": true
             }
           ]
         }
       ]
     },
     {
-      "title": {
-        "value": "Volunteer"
-      },
+      "title": [
+        {
+          "value": "Volunteer",
+          "decorator": "RAW"
+        }
+      ],
       "entries": [
         {
-          "title": {
-            "value": "NASA"
-          },
-          "sumary": [
+          "title": [
             {
-              "value": {
-                "value": "Space Program",
-                "decorator": "RAW"
-              },
-              "bullet_point": true
+              "value": "NASA",
+              "decorator": "RAW"
+            }
+          ],
+          "summary": [
+            {
+              "value": [
+                {
+                  "value": "Space Program",
+                  "decorator": "RAW"
+                }
+              ],
+              "is_bullet": true
             }
           ]
         }

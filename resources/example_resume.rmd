@@ -3,21 +3,21 @@ lin1
 lin2
 lin3
 ===
-# Education
-## Bachelors of Computer Science
+# ((Education))
+## Bachelors of **Computer Science**
 ### University of British Columbia (Sept 2015-May 2020)
 Techonologies used : ((React)), ((Flask))
-- CPSC 310, 410, *random*
+- CPSC 310, 410, **random**
 Tech
 
 ## High School (Sept 2015-May 2020)
 - Failed it
 Not finishing
 
-# Work Experience
+# Work **Experience**
 ## Company 1
-### Role 1
-- Did some *stuff* other than this
+### ((Role 1))
+- Did some **stuff** other than this
 
 $volunteer
 
