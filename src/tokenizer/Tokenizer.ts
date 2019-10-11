@@ -25,7 +25,6 @@ export default class Tokenizer {
             let regex = new RegExp(this.escapeRegex(literal),'g');
             this.program = this.program.replace(regex, ' '+literal+' ')
         }
-        console.log(`\n\n this program: \n\n` + this.program)
 
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
         // TODO maybe do more formatting for easier tokenizing
