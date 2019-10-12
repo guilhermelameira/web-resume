@@ -25,10 +25,9 @@ export default class Tokenizer {
             let regex = new RegExp(this.escapeRegex(literal),'g');
             this.program = this.program.replace(regex, ' '+literal+' ')
         }
-
+        this.program = this.program.replace(/\n+/g, '\n')
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
         
-        enhanced = enhanced.replace(/\n+/g, '\n')
         // TODO maybe do more formatting for easier tokenizing
         enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
 
