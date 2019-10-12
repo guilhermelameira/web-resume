@@ -26,9 +26,6 @@ export class SummaryParser extends AbstractParser {
             value.push(new TextParser().parse(context))
             
             if(context.hasNext() && context.peek() === Tokens.NEW_LINE)
-                while(context.peek() === Tokens.NEW_LINE){
-                    context.getNext(); // consume new line
-                }
                 break;
 
         }
