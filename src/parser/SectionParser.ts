@@ -4,6 +4,8 @@ import Tokens from "../tokenizer/Tokens";
 import PlaintextParser from "./PlaintextParser";
 import {Entry, Section} from "../types/Section";
 import {EntryParser} from "./EntryParser";
+import ParserError from "./ParserError";
+
 
 export default class SectionParser extends AbstractParser {
     parse(context: Tokenizer): Section {
