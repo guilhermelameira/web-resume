@@ -11,12 +11,18 @@ export default class Tokens {
     public static TOKEN_DECORATOR_START = "(("
     public static TOKEN_DECORATOR_END = "))"
     public static BULLET_KEY = "-"
+    public static LINE_BREAK = "++"
+    public static ICON_START = "{{"
+    public static ICON_END = "}}"
     public static literals = [
         Tokens.EMPHASIS_DECORATOR_END,
         Tokens.EMPHASIS_DECORATOR_START,
         Tokens.TOKEN_DECORATOR_END,
         Tokens.TOKEN_DECORATOR_START,
         Tokens.BULLET_KEY,
+        Tokens.LINE_BREAK,
+        Tokens.ICON_START,
+        Tokens.ICON_END
     ]
 }
 

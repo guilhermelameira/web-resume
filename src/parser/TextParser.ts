@@ -1,6 +1,6 @@
-import { AbstractParser } from "./AbstractParser";
+import {AbstractParser} from "./AbstractParser";
 import Tokenizer from "../tokenizer/Tokenizer";
-import { Text, PlainText } from "../types/Text";
+import {Text, PlainText} from "../types/Text";
 import Tokens from "../tokenizer/Tokens";
 import PlaintextParser from "./PlaintextParser";
 
@@ -12,8 +12,7 @@ export class TextParser extends AbstractParser {
         let initialText = {} as PlainText
 
         // check next token and evaluate based on the type of the text
-        let nextToken = context.peek()
-        switch (nextToken) {
+        switch (context.peek()) {
             case Tokens.EMPHASIS_DECORATOR_START:
                 // emphasis text
                 context.getNext()   // consume the emphasis start token
@@ -30,6 +29,24 @@ export class TextParser extends AbstractParser {
                 initialText = plainTextParser.parse(context)
                 text.value = initialText.value
                 text.decorator = 'TOKEN'
+                context.getNext()   // consume the token end token
+                break;
+            case Tokens.LINE_BREAK:
+                // Line break
+                context.getNext()// consume LINE_BREAK token
+                if (context.peek() === Tokens.NEW_LINE) {
+                    context.getNext() // Consume the next line and continue on
+                }
+                text.value = ""
+                text.decorator = "BREAK"
+                break
+            case Tokens.ICON_START:
+                // icon
+                context.getNext()  // consume the icon start token
+                plainTextParser = new PlaintextParser(Tokens.ICON_END)
+                initialText = plainTextParser.parse(context)
+                text.value = initialText.value
+                text.decorator = 'ICON'
                 context.getNext()   // consume the token end token
                 break;
             default:

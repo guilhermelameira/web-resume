@@ -7,7 +7,7 @@ export default class Main {
     public main() {
         let program: string = ""
         try {
-            program = fs.readFileSync(path.join(__dirname, "../resources", "example_resume.rmd")).toString('utf-8')
+            program = fs.readFileSync(path.join(__dirname, "../resources", "example_resume_fancy.rmd")).toString('utf-8')
         } catch (err) {
             console.log("Failed to open file")
             return
