@@ -8,10 +8,6 @@ import { existsTypeAnnotation } from "@babel/types";
 export class SummaryParser extends AbstractParser {
     parse(context: Tokenizer): SectionText {
 
-        // get rid of new line tokens(sometimes we have multiple newlines-strange)
-        while(context.peek() === Tokens.NEW_LINE){
-            context.getNext()
-        }
         let sectionText = {} as SectionText
         let value = [] as Text[]
 
