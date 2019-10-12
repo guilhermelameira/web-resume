@@ -27,7 +27,8 @@ export class EntryParser extends AbstractParser {
 
         if (next === Tokens.ENTRY_SUBTITLE_KEY) {
             subtitle = new PlaintextParser(Tokens.NEW_LINE).parse(context);
-            next = context.getNext() // consume NEW_LINE token
+            context.getNext() // consume NEW_LINE token
+            next = context.getNext() // get the next token
         }
 
         let summary = [] as Array<SectionText>
