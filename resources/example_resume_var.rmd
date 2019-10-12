@@ -7,17 +7,24 @@ lin3
 ## Bachelors of Computer Science
 ### University of British Columbia (Sept 2015-May 2020)
 Techonologies used : ((React)), ((Flask))
-- CPSC 310, 410, *random*
+- CPSC 310, 410, *random* {{emphasis}}
 Tech
+
+
 
 ## High School (Sept 2015-May 2020)
 - Failed it
 Not finishing
 
+
 # Work Experience
 ## Company 1
 ### Role 1
 - Did some *stuff* other than this
+
+# Volunteer
+## NASA
+- Space Program
 
 
 $volunteer

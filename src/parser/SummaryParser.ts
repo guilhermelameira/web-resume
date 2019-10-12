@@ -21,13 +21,15 @@ export class SummaryParser extends AbstractParser {
             sectionText.is_bullet = false
         }
         // if not null and not NEW_LINE then there is a text to parse in same line
-        
-        while (nextToken !== null && context.hasNext()) {
+        while (nextToken !== null) {
             value.push(new TextParser().parse(context))
-            
-            if(context.hasNext() && context.peek() === Tokens.NEW_LINE)
-                break;
+            nextToken = context.peek()
 
+            // if NEW_LINE then we just read the whole sentence; break;
+            if(nextToken === Tokens.NEW_LINE){
+                context.getNext()   // consume NEW_LINE
+               break
+            }
         }
         sectionText.value = value
         return sectionText

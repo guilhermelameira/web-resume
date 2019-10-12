@@ -34,8 +34,9 @@ export class TextParser extends AbstractParser {
                 break;
             default:
                 // raw text(normal string: no emphasis, no token)
+                
                 plainTextParser = new PlaintextParser("")
-                initialText = plainTextParser.parseTextInSentence(context)
+                initialText = plainTextParser.parse(context)
                 text.value = initialText.value
                 text.decorator = 'RAW'
                 break;
