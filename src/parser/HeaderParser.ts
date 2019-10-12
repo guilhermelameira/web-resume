@@ -10,9 +10,8 @@ export default class HeaderParser extends AbstractParser {
     parse(context: Tokenizer): Header {
         // Get NAME
         let headerStart = context.getNext()
-        if (headerStart.charAt(0) !== Tokens.USER_NAME) {
-            throw new ParserError(`Expected ${Tokens.USER_NAME} but got ${headerStart.charAt(0)} ` +
-                `at line: ${context.getCurrentLine()}`)
+        if (headerStart !== Tokens.USER_NAME) {
+            throw new ParserError(Tokens.USER_NAME, headerStart, context.getCurrentLine())
         }
         let nameParsed = new PlaintextParser(Tokens.NEW_LINE).parse(context);
         context.getNext() // consume NEW_LINE

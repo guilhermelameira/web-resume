@@ -2,7 +2,7 @@
 lin1
 lin2
 lin3
-===
+==
 # ((Education))
 ## Bachelors of **Computer Science**
 ### University of British Columbia (Sept 2015-May 2020)
@@ -19,12 +19,6 @@ Not finishing
 ### ((Role 1))
 - Did some **stuff** other than this
 
-$volunteer
-
-DATA:
-
-var volunteer {
-    # Volunteer
-    ## NASA
-    - Space Program
-}
+# Volunteer
+## NASA
+- Space Program

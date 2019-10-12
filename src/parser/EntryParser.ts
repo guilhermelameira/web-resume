@@ -1,34 +1,26 @@
 import {AbstractParser} from "./AbstractParser";
 import Tokenizer from "../tokenizer/Tokenizer";
 import {Entry} from "../types/Section";
-import {PlainText, SectionText} from "../types/Text";
+import {RichText, SectionText} from "../types/Text";
 import Tokens from "../tokenizer/Tokens";
-import PlaintextParser from "./PlaintextParser";
 import {SummaryParser} from "./SummaryParser";
+import {RichTextParser} from "./RichTextParser";
 
 export class EntryParser extends AbstractParser {
     private entryEndArray = [Tokens.SECTION_TITLE_KEY, Tokens.ENTRY_SUBTITLE_KEY, Tokens.ENTRY_TITLE_KEY]
 
     parse(context: Tokenizer): Entry {
-        let next = context.getNext(); 
-        let title = {
-            value: ""
-        }
-        let subtitle = {
-            value: ""
+        let title: RichText = []
+        let subtitle: RichText = []
+
+        if (context.peek() === Tokens.ENTRY_TITLE_KEY) {
+            context.getNext()
+            title = new RichTextParser().parse(context);
         }
 
-        if (next === Tokens.ENTRY_TITLE_KEY) {
-            title = new PlaintextParser(Tokens.NEW_LINE).parse(context);
-            context.getNext() // consume NEW_LINE token
-            // get the next token in case the above is ##
-            next = context.getNext()
-        }
-
-        if (next === Tokens.ENTRY_SUBTITLE_KEY) {
-            subtitle = new PlaintextParser(Tokens.NEW_LINE).parse(context);
-            //context.getNext() // consume NEW_LINE token
-            next = context.getNext() // get the next token
+        if (context.peek() === Tokens.ENTRY_SUBTITLE_KEY) {
+            context.getNext()
+            subtitle = new RichTextParser().parse(context);
         }
 
         let summary = [] as Array<SectionText>

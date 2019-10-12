@@ -1,5 +1,5 @@
 export default class ParserError extends Error {
-    constructor(message: string) {
-        super(message);
+    constructor(expected: string, actual: string, lineNumber: number) {
+        super(`Expected ${expected} but got ${actual} at line: ${lineNumber}`);
     }
 }

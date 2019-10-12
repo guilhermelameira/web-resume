@@ -12,8 +12,7 @@ export class ProgramParser extends AbstractParser {
         let header = headerParser.parse(context);
         let divHB = context.getNext()
         if (divHB !== Tokens.HEADER_BODY_DIV) {
-            throw new ParserError(`Expected ${Tokens.HEADER_BODY_DIV} but got ${divHB} ` +
-                `at line: ${context.getCurrentLine()}`)
+            throw new ParserError(Tokens.HEADER_BODY_DIV, divHB, context.getCurrentLine())
         }
         context.getNext() // consume the NEXT_LINE token after header-body division
 

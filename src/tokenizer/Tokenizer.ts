@@ -28,10 +28,6 @@ export default class Tokenizer {
         this.program = this.program.replace(/\n+/g, '\n')
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
         
-        // TODO maybe do more formatting for easier tokenizing
-        enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
-
-        
         this.tokens = enhanced.match(/\S+/g) as string[]
         console.log('TOKENS:', this.tokens) // fixme remove
     }

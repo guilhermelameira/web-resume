@@ -1,4 +1,4 @@
-import {PlainText, RichText, SectionText} from "./Text";
+import {RichText, SectionText} from "./Text";
 
 export type Entry = {
     title: RichText
