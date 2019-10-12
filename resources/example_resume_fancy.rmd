@@ -6,16 +6,17 @@ lin3
 # ((Education))
 ## Bachelors of **Computer Science**
 ### University of British Columbia (Sept 2015-May 2020)
-Techonologies used : ((React)), ((Flask))
+Techonologies used : ((React)), ((Flask)) ++ **Rails**
 - CPSC 310, 410, **random**
 Tech
 
 ## High School (Sept 2015-May 2020)
-- Failed it
+- Failed it ++
+and finished it
 Not finishing
 
 # Work **Experience**
-## Company 1
+## {{sap}}Company 1
 ### ((Role 1))
 - Did some **stuff** other than this
 

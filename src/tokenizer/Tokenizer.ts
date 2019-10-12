@@ -18,15 +18,22 @@ export default class Tokenizer {
     }
 
     private tokenize(): void {
+        this.program = this.program.charAt(0) + " " + this.program.substring(1) // Add a space between @ and name for header
+        
+        // add space between literal for tokenizing
+        for(let literal of Tokens.literals){
+            let regex = new RegExp(this.escapeRegex(literal),'g');
+            this.program = this.program.replace(regex, ' '+literal+' ')
+        }
+        this.program = this.program.replace(/\n+/g, '\n')
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
-        // TODO maybe do more formatting for easier tokenizing
-        enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
+        
         this.tokens = enhanced.match(/\S+/g) as string[]
-        console.log('TOKENS:', this.tokens)
+        console.log('TOKENS:', this.tokens) // fixme remove
     }
 
     // getNext returns the next token of the program, and advances the token list
-    public getNext(): string | null {
+    public getNext(): string {
         if (this.peek() != null) {
             let token = this.tokens[this.currentIdx]
             this.currentIdx++
@@ -35,7 +42,7 @@ export default class Tokenizer {
             }
             return token;
         }
-        return null // TODO throw error instead
+        throw new Error("No more tokens to consume")
     }
 
     // peek returns the next token
@@ -54,4 +61,9 @@ export default class Tokenizer {
     public getCurrentLine(): number {
         return this.lineNumber
     }
+
+    // returns a string after escaping regular expression characters in given string
+    private escapeRegex(str:string):string {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      }
 }
