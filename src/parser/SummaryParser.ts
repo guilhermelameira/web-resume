@@ -16,6 +16,7 @@ export class SummaryParser extends AbstractParser {
         if(nextToken === Tokens.BULLET_KEY){
             sectionText.is_bullet = true
             context.getNext()   // consume the bullet token
+            nextToken = context.peek()   // point to the next token
         } else {
             sectionText.is_bullet = false
         }
