@@ -27,6 +27,8 @@ export default class Tokenizer {
         }
 
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
+        
+        enhanced = enhanced.replace(/\n+/g, '\n')
         // TODO maybe do more formatting for easier tokenizing
         enhanced = enhanced.split('{{').join(' {{ ').split('}}').join(' }} ')
 
