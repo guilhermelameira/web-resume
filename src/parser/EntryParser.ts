@@ -7,7 +7,13 @@ import {SummaryParser} from "./SummaryParser";
 import {RichTextParser} from "./RichTextParser";
 
 export class EntryParser extends AbstractParser {
-    private entryEndArray = [Tokens.SECTION_TITLE_KEY, Tokens.ENTRY_SUBTITLE_KEY, Tokens.ENTRY_TITLE_KEY]
+    private entryEndArray = [Tokens.SECTION_TITLE_KEY, Tokens.ENTRY_SUBTITLE_KEY, Tokens.ENTRY_TITLE_KEY, Tokens.VAR_DEC_START]
+    private varCtx: boolean;
+
+    constructor(varCtx?: boolean) {
+        super()
+        this.varCtx = !!varCtx
+    }
 
     parse(context: Tokenizer): Entry {
         let title: RichText = []
@@ -27,6 +33,9 @@ export class EntryParser extends AbstractParser {
         let peek = context.peek()
 
         while (peek !== null && !(this.entryEndArray.includes(peek))) {
+            if (this.varCtx && context.peek() === Tokens.VAR_END) {
+                break
+            }
             summary.push(new SummaryParser().parse(context))
             peek = context.peek()
         }

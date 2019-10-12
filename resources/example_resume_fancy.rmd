@@ -16,7 +16,7 @@ and finished it
 Not finishing
 
 # Work **Experience**
-## {{sap}}Company 1
+## [[sap]]Company 1
 ### ((Role 1))
 - Did some **stuff** other than this
 

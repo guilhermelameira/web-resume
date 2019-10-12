@@ -7,8 +7,14 @@ import ParserError from "./ParserError";
 import {RichTextParser} from "./RichTextParser";
 import {RichText} from "../types/Text";
 
-
 export default class SectionParser extends AbstractParser {
+    private readonly varCtx: boolean
+
+    constructor(varCtx?: boolean) {
+        super()
+        this.varCtx = !!varCtx
+    }
+
     parse(context: Tokenizer): Section {
         // Look for Section.ts Title
         let sectionTitleKey = context.getNext()
@@ -20,8 +26,11 @@ export default class SectionParser extends AbstractParser {
         }
         // Parse Entries
         let entries = [] as Array<Entry>
-        while (context.hasNext() && context.peek() !== Tokens.SECTION_TITLE_KEY) {
-            let entry = new EntryParser().parse(context);
+        while (context.hasNext() && !([Tokens.SECTION_TITLE_KEY, Tokens.VAR_DEC_START].includes(context.peek()!))) {
+            if (this.varCtx && context.peek() === Tokens.VAR_END) {
+                break
+            }
+            let entry = new EntryParser(this.varCtx).parse(context);
             entries.push(entry)
         }
 

@@ -19,15 +19,15 @@ export default class Tokenizer {
 
     private tokenize(): void {
         this.program = this.program.charAt(0) + " " + this.program.substring(1) // Add a space between @ and name for header
-        
+
         // add space between literal for tokenizing
-        for(let literal of Tokens.literals){
-            let regex = new RegExp(this.escapeRegex(literal),'g');
-            this.program = this.program.replace(regex, ' '+literal+' ')
+        for (let literal of Tokens.literals) {
+            let regex = new RegExp(this.escapeRegex(literal), 'g');
+            this.program = this.program.replace(regex, ' ' + literal + ' ')
         }
         this.program = this.program.replace(/\n+/g, '\n')
         let enhanced = this.program.split('\n').join(' NEW_LINE ')
-        
+
         this.tokens = enhanced.match(/\S+/g) as string[]
         console.log('TOKENS:', this.tokens) // fixme remove
     }
@@ -63,7 +63,7 @@ export default class Tokenizer {
     }
 
     // returns a string after escaping regular expression characters in given string
-    private escapeRegex(str:string):string {
+    private escapeRegex(str: string): string {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-      }
+    }
 }

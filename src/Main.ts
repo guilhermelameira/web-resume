@@ -7,7 +7,7 @@ export default class Main {
     public main() {
         let program: string = ""
         try {
-            program = fs.readFileSync(path.join(__dirname, "../resources", "example_resume_fancy.rmd")).toString('utf-8')
+            program = fs.readFileSync(path.join(__dirname, "../resources", "example_resume_var.rmd")).toString('utf-8')
         } catch (err) {
             console.log("Failed to open file")
             return
@@ -18,6 +18,8 @@ export default class Main {
         console.log(str)
         console.log("done showing tokens")
         let programParsed = p.parse(t);
-        console.log(JSON.stringify(programParsed))
+        // Substitute variables TODO
+        console.log("program=", JSON.stringify(programParsed))
+        console.log("varDecs=", Array.from(programParsed.varDecs.entries()))
     }
 }
