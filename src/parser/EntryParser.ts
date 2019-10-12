@@ -21,9 +21,9 @@ export class EntryParser extends AbstractParser {
         if (next === Tokens.ENTRY_TITLE_KEY) {
             title = new PlaintextParser(Tokens.NEW_LINE).parse(context);
             context.getNext() // consume NEW_LINE token
+            // get the next token in case the above is ##
+            next = context.getNext()
         }
-        // get the next token
-        next = context.getNext()
 
         if (next === Tokens.ENTRY_SUBTITLE_KEY) {
             subtitle = new PlaintextParser(Tokens.NEW_LINE).parse(context);
