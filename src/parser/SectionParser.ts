@@ -16,6 +16,10 @@ export default class SectionParser extends AbstractParser {
             sectionTitle = new PlaintextParser(Tokens.NEW_LINE).parse(context);
             context.getNext() // consume NEW_LINE
         }
+        else {
+             throw new ParserError(`Expected ${Tokens.SECTION_TITLE_KEY} but got ${sectionTitleKey} ` +
+                `at line: ${context.getCurrentLine()}`)
+        }
         // Parse Entries
         let entries = [] as Array<Entry>
         while (context.peek() !== Tokens.SECTION_TITLE_KEY && context.hasNext()) {
