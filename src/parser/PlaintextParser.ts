@@ -17,25 +17,25 @@ export default class PlaintextParser extends AbstractParser {
 
     parse(context: Tokenizer): PlainText {
         let text = ""
-        while (context.peek() !== this.delimiter) {
-            text += context.getNext() + ' '
-        }
-        return {
-            value: text
-        }
-    }
+        switch (this.delimiter) {
+            case "":
+                let peek = context.peek()
+                while (peek !== null) {
+                    if (this.delimiterList.includes(peek)) {
+                        break; // do not consume the next token because it will be used
+                    }
+                    text += context.getNext() + ' '
+                    peek = context.peek()
+                }
+                break;
 
-    parseTextInSentence(context: Tokenizer): PlainText {
-        let text = ""
-        let peek = context.peek()
-        while (peek !== null) {
-            if(this.delimiterList.includes(peek)) {
-                break; // do not consume the next token because it will be used
-            }
-            text += context.getNext() + ' '
-            peek = context.peek()
+            default:
+                while (context.peek() !== this.delimiter) {
+                    text += context.getNext() + ' '
+                }
+                break;
+
         }
-        
         return {
             value: text
         }
