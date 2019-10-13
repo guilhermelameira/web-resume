@@ -12,8 +12,8 @@ export default class Tokens {
     public static TOKEN_DECORATOR_END = "))"
     public static BULLET_KEY = "-"
     public static LINE_BREAK = "++"
-    public static ICON_START = "{{"
-    public static ICON_END = "}}"
+    public static ICON_START = "[["
+    public static ICON_END = "]]"
     public static literals = [
         Tokens.EMPHASIS_DECORATOR_END,
         Tokens.EMPHASIS_DECORATOR_START,
@@ -24,5 +24,9 @@ export default class Tokens {
         Tokens.ICON_START,
         Tokens.ICON_END
     ]
+    public static DATA_START = "DATA:"
+    public static VAR_KEYWORD = "var"
+    public static VAR_DEC_START = "{"
+    public static VAR_DEC_END = "}"
 }
 

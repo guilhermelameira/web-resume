@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "test:tsc": "tsc -p tsconfig.test.json -w",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "parser": "tsc src/program.ts && node src/program.js"
   },
   "eslintConfig": {
     "extends": "react-app"
