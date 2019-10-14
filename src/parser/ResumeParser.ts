@@ -14,7 +14,9 @@ export class ResumeParser {
             subProgram = subProgram.replace(`$${varName.name}`, varName.value)
         })
         const dataStartIdx = subProgram.indexOf(Tokens.DATA_START)
-        subProgram = subProgram.substring(0, dataStartIdx)
+        if (dataStartIdx !== -1){
+            subProgram = subProgram.substring(0, dataStartIdx)
+        }
         console.log(subProgram)
         let p = new ProgramParser();
 
