@@ -2,14 +2,26 @@ import React, {Component} from 'react';
 import AppInput from './AppInput';
 import AppOutput from './AppOutput';
 import './App.css';
+import {ResumeParser} from './parser/ResumeParser';
 
 class App extends Component {
   state = {
-    inputValue: ''
+    inputValue: '',
+    parsedValue: null,
+    parsedError: null
   };
 
   handleClick = () => {
-    if (this.state.inputValue) console.log('Input:', this.state.inputValue);
+    let parsedResume = null;
+    try {
+      parsedResume = ResumeParser.parse(this.state.inputValue);
+      this.setState({
+        parsedValue: parsedResume,
+        parsedError: null
+      });
+    } catch (e) {
+      this.setState({parsedError: e});
+    }
   };
 
   handleInputValueChange = (value: string) => {
@@ -32,7 +44,10 @@ class App extends Component {
             inputValue={this.state.inputValue}
             handleInputValueChange={this.handleInputValueChange}
           />
-          <AppOutput />
+          <AppOutput
+            parsed={this.state.parsedValue}
+            error={this.state.parsedError}
+          />
         </div>
       </div>
     );
