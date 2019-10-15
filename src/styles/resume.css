@@ -13,11 +13,16 @@ h3 {
     font-size: 10pt;
     margin: 0;
     padding: 0;
-        white-space: pre-wrap;
-
+    white-space: pre-wrap;
+}
+h4 {
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
 }
 
-h4, p, li {
+p, li {
     font-size: 8pt;
     vertical-align: middle;
     margin: 0px;
@@ -45,6 +50,12 @@ h3 strong {
     font-size: 9pt;
 }
 
+h3 b, h4 b {
+    line-height: 15pt;
+    font-weight: 300 !important;
+    color: #444
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -55,8 +66,11 @@ li.bullet {
     margin-left: 15px;
     margin-bottom: 1pt;
 }
-.entry p, .entry h4, h3 {
-    margin-bottom: 5pt;
+.entry p, .entry, h3 {
+    margin-bottom: 3pt;
+}
+h4{
+    margin-bottom: 3pt;
 }
 li.bullet:last-of-type {
     margin-bottom: 5pt;
@@ -91,8 +105,8 @@ main {
 }
 .resume * {
     font-family: 'Roboto', sans-serif;
-    color: black;
 }
+
 .resume.letter {
     width: 8.5in;
     height: 11in;

@@ -9,7 +9,7 @@ const RichText: React.FC<{
       if (piece.decorator === 'EMPHASIS') {
         return <b key={index}>{piece.value}</b>;
       } else if (piece.decorator === 'TOKEN') {
-        return <strong key={index}>{piece.value}</strong>;
+        return <strong key={index}>{piece.value.trim()}</strong>;
       }
       return (
         <React.Fragment key={index}>
