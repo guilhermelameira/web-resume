@@ -14,14 +14,14 @@ const Entry: React.FC<{
 }) => {
   return (
     <ul className="entry">
-      <h3 className="title">
+      {(title && title.length) ? (<h3 className="title">
         <RichText ast={title} />
-      </h3>
-      {subtitle && (
+      </h3>): null}
+      {(subtitle && subtitle.length) ? (
         <h4 className="title">
           <RichText ast={subtitle} />
         </h4>
-      )}
+      ) : null}
       {summary.map((s, index) => (
         <SectionText key={index} ast={s} />
       ))}

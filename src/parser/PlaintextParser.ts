@@ -8,6 +8,7 @@ export default class PlaintextParser extends AbstractParser {
     private readonly delimiter: string
     private readonly delimiterList = [Tokens.TOKEN_DECORATOR_START,
         Tokens.EMPHASIS_DECORATOR_START,
+        Tokens.ICON_START,
         Tokens.NEW_LINE]
 
     constructor(delimiter: string) {

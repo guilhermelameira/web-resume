@@ -3,5 +3,5 @@ import {Body} from "./Body"
 
 export type Program = {
     header: Header
-    body: Body
+    body?: Body
 }

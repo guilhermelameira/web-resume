@@ -17,6 +17,7 @@ export class SummaryParser extends AbstractParser {
             sectionText.is_bullet = false
         }
         // if not null and not NEW_LINE then there is a text to parse in same line
+        sectionText.value = []
         if (nextToken !== null) {
             sectionText.value = new RichTextParser().parse(context)
         }

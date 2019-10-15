@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import AppInput from './AppInput';
 import AppOutput from './AppOutput';
 import './App.css';
+import './styles/resume.css';
+import './styles/icofont.css';
 import {ResumeParser} from './parser/ResumeParser';
 
 class App extends Component {
@@ -11,7 +13,7 @@ class App extends Component {
     parsedError: null
   };
 
-  handleClick = () => {
+  runParser = () => {
     let parsedResume = null;
     try {
       parsedResume = ResumeParser.parse(this.state.inputValue);
@@ -24,22 +26,18 @@ class App extends Component {
     }
   };
 
-  handleInputValueChange = (value: string) => {
-    this.setState({inputValue: value});
+  handleInputValueChange = async (value: string) => {
+    await this.setState({inputValue: value});
+    this.runParser();
   };
 
   render = () => {
     return (
       <div id="home">
-        <div>
-          <span>CPSC 410 DSL</span>
-          <button
-            onClick={this.handleClick}
-          >
-            Compile
-          </button>
-        </div>
-        <div>
+        {/* <div id="header">
+          <span>Web Resume</span>
+        </div> */}
+        <div id="appBody">
           <AppInput
             inputValue={this.state.inputValue}
             handleInputValueChange={this.handleInputValueChange}

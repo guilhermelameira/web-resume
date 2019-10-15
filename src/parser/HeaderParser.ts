@@ -18,7 +18,7 @@ export default class HeaderParser extends AbstractParser {
 
         // Get Links
         let links = [] as Array<PlainText>
-        while (context.peek() !== Tokens.HEADER_BODY_DIV) {
+        while (context.hasNext() && context.peek() !== Tokens.HEADER_BODY_DIV) {
             links.push(this.parseLink(context))
         }
 
