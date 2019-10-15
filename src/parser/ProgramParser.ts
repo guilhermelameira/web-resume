@@ -8,19 +8,24 @@ import {Program} from "../types/Program";
 
 export class ProgramParser extends AbstractParser {
     public parse(context: Tokenizer): Program {
-        let headerParser = new HeaderParser()
-        let header = headerParser.parse(context);
-        let divHB = context.getNext()
-        if (divHB !== Tokens.HEADER_BODY_DIV) {
-            throw new ParserError(Tokens.HEADER_BODY_DIV, divHB, context.getCurrentLine())
-        }
-        context.getNext() // consume the NEXT_LINE token after header-body division
+        let header;
+        let body;
 
-        let bodyParser = new BodyParser()
-        let parsedBody = bodyParser.parse(context)
+        let headerParser = new HeaderParser()
+        header = headerParser.parse(context);
+        if (context.hasNext()) {
+            let divHB = context.getNext()
+            if (divHB !== Tokens.HEADER_BODY_DIV) {
+                throw new ParserError(Tokens.HEADER_BODY_DIV, divHB, context.getCurrentLine())
+            }
+            context.getNext() // consume the NEXT_LINE token after header-body division
+
+            let bodyParser = new BodyParser()
+            body = bodyParser.parse(context)
+        }
         return {
-            header: header,
-            body: parsedBody
+            header,
+            body
         }
     }
 }

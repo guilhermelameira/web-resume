@@ -10,19 +10,15 @@ const AppOutput: React.FC<{
   parsed,
   error
 }) => (
-  <div id="output">
+  <div id="output" className="canvas">
     {error && (
       <div>{error.toString()}</div>
     )}
     {!error && parsed && (
-      <div id="output">
-        <div className="canvas">
           <div className="resume letter">
             <Header ast={parsed.header} />
-            <Body ast={parsed.body} />
+            {parsed.body && <Body ast={parsed.body} />}
           </div>
-        </div>
-      </div>
     )}
   </div>
 );
