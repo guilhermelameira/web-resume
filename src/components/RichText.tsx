@@ -9,7 +9,7 @@ const RichText: React.FC<{
       if (piece.decorator === 'EMPHASIS') {
         return <b key={index}>{piece.value}</b>;
       } else if (piece.decorator === 'TOKEN') {
-        return <strong key={index}>{piece.value.trim()}</strong>;
+        return <span><strong key={index}>{piece.value.trim()}</strong>&nbsp;</span>;
       } else if (piece.decorator === 'ICON') {
         // TODO icons need a better abstract syntax
         let iconClassName = 'icofont ';
@@ -21,14 +21,14 @@ const RichText: React.FC<{
           const match = value.match(/\d+/);
           if (match) {
             const numIndex = match.index || value.length;
-            const iconName = value.substring(0, numIndex);
+            const iconName = value.substring(0, numIndex - 1);
             const iconSize = value.substring(numIndex, value.length);
             iconClassName += `icofont-${iconName} icofont-${iconSize}`;
           }
         } else {
           iconClassName += `icofont-${value}`;
         }
-        return <i key={index} className={iconClassName} />;
+        return <span><i key={index} className={iconClassName} />&nbsp;</span>;
       }
       return (
         <React.Fragment key={index}>

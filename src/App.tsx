@@ -3,6 +3,7 @@ import AppInput from './AppInput';
 import AppOutput from './AppOutput';
 import './App.css';
 import './styles/resume.css';
+import './styles/icofont.css';
 import {ResumeParser} from './parser/ResumeParser';
 
 class App extends Component {

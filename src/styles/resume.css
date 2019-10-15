@@ -79,6 +79,10 @@ header {
     flex:0;
     margin-bottom: 20pt;
 }
+header a{
+    flex:0;
+    font-size: 10pt;
+}
 main {
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
